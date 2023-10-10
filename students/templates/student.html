@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ student.name }}</title>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">{{ student.name }}</h1>
+            <div class="columns">
+                <div class="column is-half">
+                    <h2 class="subtitle">Student Info</h2>
+                    <p>ID: {{ student.id }}</p>
+                    <p>Email: {{ student.email }}</p>
+                    <p>Date of Birth: {{ student.dob }}</p>
+                    <p>Phone: {{ student.phone }}</p>
+                    <p>Gender: {{ student.gender }}</p>
+                    <p>Address: {{ student.address }}</p>
+                </div>
+                <div class="column is-half">
+                    <h2 class="subtitle">Departments</h2>
+                    <ul>
+                        {% for department in student.department.all %}
+                            {{ department.department }}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
